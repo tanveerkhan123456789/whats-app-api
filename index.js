@@ -28,10 +28,9 @@ let venomClient;
 async function startVenom() {
     const sessionName = 'sessionName';
     const sessionFolder = path.join(__dirname, 'briway-sessions', sessionName);
-const hello=0;
+
     // Check if session is stored
     const isSessionStored = fs.existsSync(sessionFolder) && fs.readdirSync(sessionFolder).length > 0;
-    // console.log(`Session stored: ${isSessionStored}`);
 
     try {
         venomClient = await venom.create(
@@ -47,8 +46,12 @@ const hello=0;
             {
                 folderNameToken: 'tokens',
                 mkdirFolderToken: path.join(__dirname, 'briway-sessions'),
-                headless:false, // Start headless if session is stored
-                multidevice: true
+                headless: false, // Use headless: true for production
+                multidevice: true,
+                puppeteerOptions: {
+                    args: ['--no-sandbox', '--disable-setuid-sandbox'],
+                    timeout: 60000 // Increase timeout to 60 seconds
+                }
             }
         );
 
@@ -103,7 +106,7 @@ app.post('/send', upload.single('image'), async (req, res) => {
         let imageResult;
         if (imageUrl) {
             const imagePath = path.join(__dirname, 'public/uploads', imageUrl);
-            imageResult = await venomClient.sendImage(chatId, 'https://whats-chat-free.vercel.app/public/uploads/1720448718127_img1-min.jpg', 'Image from website');
+            imageResult = await venomClient.sendImage(chatId, imagePath, 'Image from website');
             logs.push(`Image sent to ${number}: ${JSON.stringify(imageResult)}`);
         }
 

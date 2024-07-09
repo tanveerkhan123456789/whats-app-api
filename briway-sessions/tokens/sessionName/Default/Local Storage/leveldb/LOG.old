@@ -1,6 +1,0 @@
-2024/07/09-22:57:27.216 3ed0 Reusing MANIFEST E:\xampp\htdocs\Mern stack\mern-stack\backend\briway-sessions\tokens\sessionName\Default\Local Storage\leveldb/MANIFEST-000001
-2024/07/09-22:57:27.226 3ed0 Recovering log #3
-2024/07/09-22:57:27.229 3ed0 Reusing old log E:\xampp\htdocs\Mern stack\mern-stack\backend\briway-sessions\tokens\sessionName\Default\Local Storage\leveldb/000003.log 
-2024/07/09-23:00:31.224 3b6c Level-0 table #5: started
-2024/07/09-23:00:31.273 3b6c Level-0 table #5: 18451 bytes OK
-2024/07/09-23:00:31.309 3b6c Delete type=0 #3

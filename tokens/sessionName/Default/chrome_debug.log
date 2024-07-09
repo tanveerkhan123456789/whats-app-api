@@ -1,0 +1,3 @@
+[0709/232617.553:INFO:CONSOLE(133)] "Event handler of 'x-storagemutated-1' event must be added on the initial evaluation of worker script.", source: https://static.whatsapp.net/rsrc.php/v3/yL/r/lvB3iw6LF3F.js?_nc_x=Ij3Wp8lg5Kz (133)
+[0709/232617.834:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Unrecognized feature: 'battery'.", source:  (0)
+[0709/232617.834:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Unrecognized feature: 'usb-unrestricted'.", source:  (0)

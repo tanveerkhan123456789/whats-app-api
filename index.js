@@ -44,15 +44,20 @@ async function startVenom() {
                 console.log('Session name:', session);
             },
             {
-                folderNameToken: 'tokens',
-                mkdirFolderToken: path.join(__dirname, 'briway-sessions'),
-                headless: false, // Use headless: true for production
-                multidevice: true,
-                puppeteerOptions: {
-                    args: ['--no-sandbox', '--disable-setuid-sandbox'],
-                    timeout: 60000 // Increase timeout to 60 seconds
-                }
-            }
+                folderNameToken: 'tokens', //folder name when saving tokens
+                mkdirFolderToken: './node_modules', //folder directory tokens, just inside the venom folder, example:  { mkdirFolderToken: '/node_modules', } //will save the tokens folder in the node_modules directory
+                headless: false, // Headless chrome
+                devtools: false, // Open devtools by default
+                useChrome: true, // If false will use Chromium instance
+                debug: false, // Opens a debug session
+                logQR: true, // Logs QR automatically in terminal
+                browserArgs: ['--no-sandbox', '--disable-setuid-sandbox'], // Parameters to be added into the chrome browser instance
+                disableSpins: true, // Will disable Spinnies animation, useful for containers (docker) for a better log
+                disableWelcome: true, // Will disable the welcoming message which appears in the beginning
+                updates: true, // Logs info updates automatically in terminal
+                autoClose: 60000, // Automatically closes the venom-bot only when scanning the QR code (default 60 seconds, if you want to turn it off, assign 0 or false)
+              }
+
         );
 
         console.log('Venom bot session started successfully');

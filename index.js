@@ -22,7 +22,7 @@ const storage = multer.diskStorage({
 
 // Multer setup
 const upload = multer({ storage });
-
+const as=0;
 // Venom-bot setup with persistent session
 let venomClient;
 async function startVenom() {
